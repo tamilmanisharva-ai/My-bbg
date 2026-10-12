@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Championship Local Arena Tag</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="setup-panel">
+        <h1>LOCAL ARENA TAG</h1>
+        
+        <div class="settings-grid">
+            <!-- Player 1 Customizer -->
+            <div class="config-box">
+                <h3>Player 1 (WASD)</h3>
+                <label>Skin Color: 
+                    <input type="color" id="p1-color" value="#00ffcc">
+                </label>
+            </div>
+
+            <!-- Player 2 Customizer -->
+            <div class="config-box">
+                <h3>Player 2 (ARROWS)</h3>
+                <label>Skin Color: 
+                    <input type="color" id="p2-color" value="#ff0055">
+                </label>
+            </div>
+
+            <!-- Match Rules Modifier -->
+            <div class="config-box rules">
+                <h3>Match Modifiers</h3>
+                <label>Arena Map Selection:
+                    <select id="map-select">
+                        <option value="0">Map 1: Split Level Pillars</option>
+                        <option value="1">Map 2: Dual Sky-High Shelves</option>
+                        <option value="2">Map 3: Central Grid Matrix</option>
+                    </select>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="double-jump-toggle"> Enable Double Jump Mechanics
+                </label>
+            </div>
+        </div>
+
+        <button id="btn-start">START MATCH</button>
+    </div>
+
+    <!-- Match Arena HUD Layer -->
+    <div id="game-ui">
+        <div id="status-alert">MATCH ACTIVE - RUN!</div>
+        <div class="score-row">
+            <div>P1 TAGS: <span id="p1-score">0</span></div>
+            <div id="cooldown-timer">READY</div>
+            <div>P2 TAGS: <span id="p2-score">0</span></div>
+        </div>
+        <canvas id="arenaCanvas" width="900" height="500"></canvas>
+        <button id="btn-menu">RETURN TO SETUP</button>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
